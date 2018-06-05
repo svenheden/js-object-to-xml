@@ -1,4 +1,4 @@
-# json-2-xml
+# js-object-to-xml
 
 Convert simple JS objects to XML
 
@@ -10,14 +10,14 @@ Convert simple JS objects to XML
 ## Install
 
 ```
-$ npm install --save json-2-xml
+$ npm install --save js-object-to-xml
 ```
 
 
 ## Usage
 
 ```js
-import { jsonToXml } from 'json-2-xml';
+import { objectToXml } from 'js-object-to-xml';
 
 const object = {
   item: {
@@ -26,7 +26,7 @@ const object = {
   }
 };
 
-const xml = jsonToXml(object); // <item><foo>Lorem</foo><bar>Ipsum</bar></item>;
+const xml = objectToXml(object); // <item><foo>Lorem</foo><bar>Ipsum</bar></item>;
 ```
 
 
@@ -34,7 +34,7 @@ const xml = jsonToXml(object); // <item><foo>Lorem</foo><bar>Ipsum</bar></item>;
 
 MIT © [Jonathan Persson](https://github.com/jonathanp)
 
-[npm-url]: https://npmjs.org/package/json-2-xml
-[npm-image]: https://badge.fury.io/js/json-2-xml.svg
-[travis-image]: https://travis-ci.org/jonathanp/json-2-xml.svg
-[travis-url]: https://travis-ci.org/jonathanp/json-2-xml
+[npm-url]: https://npmjs.org/package/js-object-to-xml
+[npm-image]: https://badge.fury.io/js/js-object-to-xml.svg
+[travis-image]: https://travis-ci.org/jonathanp/js-object-to-xml.svg
+[travis-url]: https://travis-ci.org/jonathanp/js-object-to-xml

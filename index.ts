@@ -1,4 +1,4 @@
-export const jsonToXml = (object: any): string => {
+export const objectToXml = (object: any): string => {
   return Object.entries(object)
     .map(([ key, value ]) => {
       let startTag = key;
@@ -15,7 +15,7 @@ export const jsonToXml = (object: any): string => {
       }
 
       if (typeof value === 'object') {
-        children = jsonToXml(value);
+        children = objectToXml(value);
       } else {
         children = value;
       }

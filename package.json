@@ -1,14 +1,14 @@
 {
-    "name": "json-2-xml",
-    "title": "JSON to XML",
-    "version": "0.1.0",
+    "name": "js-object-to-xml",
+    "title": "JS object to XML",
+    "version": "0.2.0",
     "author": "Jonathan Persson <persson.jonathan@gmail.com>",
     "license": "MIT",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "repository": {
         "type": "git",
-        "url": "https://github.com/jonathanp/json-2-xml.git"
+        "url": "https://github.com/jonathanp/js-object-to-xml.git"
     },
     "devDependencies": {
         "@types/node": "10.3.1",

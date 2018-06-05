@@ -1,8 +1,8 @@
 const test = require('tape');
-const { jsonToXml } = require('./dist');
+const { objectToXml } = require('./dist');
 
 test('simple object', assert => {
-  const actual = jsonToXml({
+  const actual = objectToXml({
     item: {
       foo: 'Lorem ipsum',
       bar: 'Dolor sit amet'
@@ -16,7 +16,7 @@ test('simple object', assert => {
 });
 
 test('object 2 levels deep', assert => {
-  const actual = jsonToXml({
+  const actual = objectToXml({
     item: {
       foo: {
         baz: 'Lorem',
@@ -33,7 +33,7 @@ test('object 2 levels deep', assert => {
 });
 
 test('array of objects', assert => {
-  const actual = jsonToXml({
+  const actual = objectToXml({
     items: [
       {
         item: {
@@ -57,7 +57,7 @@ test('array of objects', assert => {
 });
 
 test('empty string', assert => {
-  const actual = jsonToXml({
+  const actual = objectToXml({
     item: {
       foo: ''
     }
@@ -70,7 +70,7 @@ test('empty string', assert => {
 });
 
 test('null values', assert => {
-  const actual = jsonToXml({
+  const actual = objectToXml({
     item: {
       foo: null
     }
@@ -83,7 +83,7 @@ test('null values', assert => {
 });
 
 test('undefined values', assert => {
-  const actual = jsonToXml({
+  const actual = objectToXml({
     item: {
       foo: undefined
     }
@@ -96,7 +96,7 @@ test('undefined values', assert => {
 });
 
 test('numbers', assert => {
-  const actual = jsonToXml({
+  const actual = objectToXml({
     item: {
       foo: 12
     }
@@ -109,7 +109,7 @@ test('numbers', assert => {
 });
 
 test('attributes', assert => {
-  const actual = jsonToXml({
+  const actual = objectToXml({
     item: {
       '@': {
         foo: 'bar'
@@ -125,7 +125,7 @@ test('attributes', assert => {
 });
 
 test('attributes without children', assert => {
-  const actual = jsonToXml({
+  const actual = objectToXml({
     item: {
       '@': {
         foo: 'bar'
@@ -140,7 +140,7 @@ test('attributes without children', assert => {
 });
 
 test('attributes with an empty string as child', assert => {
-  const actual = jsonToXml({
+  const actual = objectToXml({
     item: {
       '@': {
         foo: 'bar'
@@ -156,7 +156,7 @@ test('attributes with an empty string as child', assert => {
 });
 
 test('attributes with an object as child', assert => {
-  const actual = jsonToXml({
+  const actual = objectToXml({
     item: {
       '@': {
         foo: 'bar'

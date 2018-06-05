@@ -107,3 +107,68 @@ test('numbers', assert => {
   assert.equal(actual, expected);
   assert.end();
 });
+
+test('attributes', assert => {
+  const actual = jsonToXml({
+    item: {
+      '@': {
+        foo: 'bar'
+      },
+      '#': 'lorem'
+    }
+  });
+
+  const expected = `<item foo="bar">lorem</item>`;
+
+  assert.equal(actual, expected);
+  assert.end();
+});
+
+test('attributes without children', assert => {
+  const actual = jsonToXml({
+    item: {
+      '@': {
+        foo: 'bar'
+      }
+    }
+  });
+
+  const expected = `<item foo="bar"/>`;
+
+  assert.equal(actual, expected);
+  assert.end();
+});
+
+test('attributes with an empty string as child', assert => {
+  const actual = jsonToXml({
+    item: {
+      '@': {
+        foo: 'bar'
+      },
+      '#': ''
+    }
+  });
+
+  const expected = `<item foo="bar"/>`;
+
+  assert.equal(actual, expected);
+  assert.end();
+});
+
+test('attributes with an object as child', assert => {
+  const actual = jsonToXml({
+    item: {
+      '@': {
+        foo: 'bar'
+      },
+      '#': {
+        baz: 12
+      }
+    }
+  });
+
+  const expected = `<item foo="bar"><baz>12</baz></item>`;
+
+  assert.equal(actual, expected);
+  assert.end();
+});

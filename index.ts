@@ -1,21 +1,39 @@
 export const jsonToXml = (object: any): string => {
   return Object.entries(object)
-    .map(([ tag, value ]) => {
+    .map(([ key, value ]) => {
+      let startTag = key;
+      let endTag = key;
+      let children;
+
       if (value == null) {
-        return `<${tag} xsi:nil="true"/>`;
+        return `<${startTag} xsi:nil="true"/>`;
       }
 
-      const children = typeof value === 'object' ? jsonToXml(value) : value;
+      if (typeof value === 'object' && '@' in value) {
+        startTag += ` ${formatAttributes(value['@'])}`;
+        value = '#' in value ? value['#'] : '';
+      }
+
+      if (typeof value === 'object') {
+        children = jsonToXml(value);
+      } else {
+        children = value;
+      }
 
       if (children === '') {
-        return `<${tag}/>`;
+        return `<${startTag}/>`;
       }
 
-      if (/^\d+$/.test(tag)) {
+      if (/^\d+$/.test(key)) {
         return children;
       }
 
-      return `<${tag}>${children}</${tag}>`;
+      return `<${startTag}>${children}</${endTag}>`;
     })
     .join('');
 };
+
+const formatAttributes = (attributes: object): string =>
+  Object.entries(attributes)
+    .map(([ key, value ]) => `${key}="${value}"`)
+    .join(' ');

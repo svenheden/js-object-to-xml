@@ -9,7 +9,7 @@ test('simple object', assert => {
     }
   });
 
-  const expected = `<item><foo>Lorem ipsum</foo><bar>Dolor sit amet</bar></item>`;
+  const expected = '<item><foo>Lorem ipsum</foo><bar>Dolor sit amet</bar></item>';
 
   assert.equal(actual, expected);
   assert.end();
@@ -26,7 +26,7 @@ test('object 2 levels deep', assert => {
     }
   });
 
-  const expected = `<item><foo><baz>Lorem</baz><boz>Ipsum</boz></foo><bar>Dolor sit amet</bar></item>`;
+  const expected = '<item><foo><baz>Lorem</baz><boz>Ipsum</boz></foo><bar>Dolor sit amet</bar></item>';
 
   assert.equal(actual, expected);
   assert.end();
@@ -50,7 +50,7 @@ test('array of objects', assert => {
     ]
   });
 
-  const expected = `<items><item><foo>Lorem ipsum</foo><bar>Dolor sit amet</bar></item><item><foo>Consectetur</foo><bar>Adipiscing</bar></item></items>`;
+  const expected = '<items><item><foo>Lorem ipsum</foo><bar>Dolor sit amet</bar></item><item><foo>Consectetur</foo><bar>Adipiscing</bar></item></items>';
 
   assert.equal(actual, expected);
   assert.end();
@@ -63,7 +63,7 @@ test('empty string', assert => {
     }
   });
 
-  const expected = `<item><foo/></item>`;
+  const expected = '<item><foo/></item>';
 
   assert.equal(actual, expected);
   assert.end();
@@ -76,7 +76,7 @@ test('null values', assert => {
     }
   });
 
-  const expected = `<item><foo xsi:nil="true"/></item>`;
+  const expected = '<item><foo xsi:nil="true"/></item>';
 
   assert.equal(actual, expected);
   assert.end();
@@ -89,7 +89,7 @@ test('undefined values', assert => {
     }
   });
 
-  const expected = `<item><foo xsi:nil="true"/></item>`;
+  const expected = '<item><foo xsi:nil="true"/></item>';
 
   assert.equal(actual, expected);
   assert.end();
@@ -102,7 +102,7 @@ test('numbers', assert => {
     }
   });
 
-  const expected = `<item><foo>12</foo></item>`;
+  const expected = '<item><foo>12</foo></item>';
 
   assert.equal(actual, expected);
   assert.end();
@@ -118,7 +118,7 @@ test('attributes', assert => {
     }
   });
 
-  const expected = `<item foo="bar">lorem</item>`;
+  const expected = '<item foo="bar">lorem</item>';
 
   assert.equal(actual, expected);
   assert.end();
@@ -133,7 +133,7 @@ test('attributes without children', assert => {
     }
   });
 
-  const expected = `<item foo="bar"/>`;
+  const expected = '<item foo="bar"/>';
 
   assert.equal(actual, expected);
   assert.end();
@@ -149,7 +149,7 @@ test('attributes with an empty string as child', assert => {
     }
   });
 
-  const expected = `<item foo="bar"/>`;
+  const expected = '<item foo="bar"/>';
 
   assert.equal(actual, expected);
   assert.end();
@@ -167,7 +167,7 @@ test('attributes with an object as child', assert => {
     }
   });
 
-  const expected = `<item foo="bar"><baz>12</baz></item>`;
+  const expected = '<item foo="bar"><baz>12</baz></item>';
 
   assert.equal(actual, expected);
   assert.end();

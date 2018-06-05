@@ -26,7 +26,7 @@ const object = {
   }
 };
 
-const xml = objectToXml(object); // <item><foo>Lorem</foo><bar>Ipsum</bar></item>;
+const xml = objectToXml(object); // <item><foo>Lorem</foo><bar>Ipsum</bar></item>
 ```
 
 

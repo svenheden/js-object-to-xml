@@ -1,0 +1,25 @@
+{
+    "name": "json-2-xml",
+    "title": "JSON to XML",
+    "version": "0.1.0",
+    "author": "Jonathan Persson <persson.jonathan@gmail.com>",
+    "license": "MIT",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jonathanp/json-2-xml.git"
+    },
+    "devDependencies": {
+        "@types/node": "10.3.1",
+        "nodemon": "1.17.5",
+        "tape": "4.9.0",
+        "typescript": "2.9.1"
+    },
+    "scripts": {
+        "build": "tsc",
+        "test": "npm run build && node test.js",
+        "test-watch": "nodemon --watch index.ts --watch test.js --exec 'npm run test'",
+        "prepare": "npm run build"
+    }
+}

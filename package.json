@@ -1,7 +1,7 @@
 {
     "name": "js-object-to-xml",
     "title": "JS object to XML",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "author": "Jonathan Persson <persson.jonathan@gmail.com>",
     "license": "MIT",
     "main": "./dist/index.js",

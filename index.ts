@@ -17,7 +17,7 @@ export const objectToXml = (object: any): string => {
       if (typeof value === 'object') {
         children = objectToXml(value);
       } else {
-        children = value;
+        children = escape(value);
       }
 
       if (children === '') {
@@ -37,3 +37,12 @@ const formatAttributes = (attributes: object): string =>
   Object.entries(attributes)
     .map(([ key, value ]) => `${key}="${value}"`)
     .join(' ');
+
+const escape = (val?: string) => val
+  ? String(val)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+  : val;

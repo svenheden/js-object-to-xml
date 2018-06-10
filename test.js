@@ -15,6 +15,20 @@ test('simple object', assert => {
   assert.end();
 });
 
+test('text nodes with characters that needs escaping', assert => {
+  const actual = objectToXml({
+    item: {
+      foo: 'Lorem & ipsum',
+      bar: 'Dolor "sit" amet',
+    }
+  });
+
+  const expected = '<item><foo>Lorem &amp; ipsum</foo><bar>Dolor &quot;sit&quot; amet</bar></item>';
+
+  assert.equal(actual, expected);
+  assert.end();
+});
+
 test('object 2 levels deep', assert => {
   const actual = objectToXml({
     item: {

@@ -1,5 +1,5 @@
 export const objectToXml = (object: any): string => {
-  return Object.entries(object)
+  return entries(object)
     .map(([ key, value ]) => {
       let startTag = key;
       let endTag = key;
@@ -33,8 +33,11 @@ export const objectToXml = (object: any): string => {
     .join('');
 };
 
+// needed in environments that doesn't have `Object.entries()`
+const entries = (obj: object) => Object.keys(obj).map(key => [key, obj[key]]);
+
 const formatAttributes = (attributes: object): string =>
-  Object.entries(attributes)
+  entries(attributes)
     .map(([ key, value ]) => `${key}="${value}"`)
     .join(' ');
 

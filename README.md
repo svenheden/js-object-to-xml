@@ -32,9 +32,9 @@ const xml = objectToXml(object); // <item><foo>Lorem</foo><bar>Ipsum</bar></item
 
 ## License
 
-MIT © [Jonathan Persson](https://github.com/jonathanp)
+MIT © [Jonathan Svenheden](https://github.com/svenheden)
 
 [npm-url]: https://npmjs.org/package/js-object-to-xml
 [npm-image]: https://badge.fury.io/js/js-object-to-xml.svg
-[travis-image]: https://travis-ci.org/jonathanp/js-object-to-xml.svg
-[travis-url]: https://travis-ci.org/jonathanp/js-object-to-xml
+[travis-image]: https://travis-ci.org/svenheden/js-object-to-xml.svg
+[travis-url]: https://travis-ci.org/svenheden/js-object-to-xml

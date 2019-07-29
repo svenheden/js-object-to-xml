@@ -1,14 +1,14 @@
 {
     "name": "js-object-to-xml",
     "title": "JS object to XML",
-    "version": "0.5.0",
-    "author": "Jonathan Persson <persson.jonathan@gmail.com>",
+    "version": "0.5.1",
+    "author": "Jonathan Svenheden <jonathan@svenheden.com>",
     "license": "MIT",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "repository": {
         "type": "git",
-        "url": "https://github.com/jonathanp/js-object-to-xml.git"
+        "url": "https://github.com/svenheden/js-object-to-xml.git"
     },
     "devDependencies": {
         "@types/node": "10.3.1",

@@ -186,3 +186,21 @@ test('attributes with an object as child', assert => {
   assert.equal(actual, expected);
   assert.end();
 });
+
+test('null values with suppressEmptyTags configuration', assert => {
+  const actual = objectToXml({
+    item: {
+      foo: null,
+      bar: 'Adipiscing'
+    }
+   },
+  config = {
+    suppressEmptyTags: true
+  }
+  );
+
+  const expected = '<item><bar>Adipiscing</bar></item>';
+
+  assert.equal(actual, expected);
+  assert.end();
+});

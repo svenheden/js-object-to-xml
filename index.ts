@@ -1,4 +1,6 @@
-export const objectToXml = (object: any): string => {
+export const objectToXml = (object: any,config?:any): string => {
+  config = config || {};
+  const suppressEmptyTags = config.suppressEmptyTags || false;
   return entries(object)
     .map(([ key, value ]) => {
       let startTag = key;
@@ -6,6 +8,9 @@ export const objectToXml = (object: any): string => {
       let children;
 
       if (value == null) {
+        if(suppressEmptyTags){
+          return "";
+        }
         return `<${startTag} xsi:nil="true"/>`;
       }
 
@@ -15,7 +20,7 @@ export const objectToXml = (object: any): string => {
       }
 
       if (typeof value === 'object') {
-        children = objectToXml(value);
+        children = objectToXml(value,config);
       } else {
         children = escape(value);
       }

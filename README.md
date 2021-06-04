@@ -26,7 +26,8 @@ const object = {
 const xml = objectToXml(object); // <item><foo>Lorem</foo><bar>Ipsum</bar></item>
 ```
 
-## Optional Configuration to ignore the null values
+## Optional Configuration to ignore null values
+```js
 import { objectToXml } from "js-object-to-xml";
 
 const object = {
@@ -39,6 +40,7 @@ const config = {
     suppressEmptyTags: true
 };
 const xml = objectToXml(object,config); // <item><bar>Ipsum</bar></item>
+```
 ## License
 
 MIT © [Jonathan Svenheden](https://github.com/svenheden)

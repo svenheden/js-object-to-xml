@@ -26,7 +26,7 @@ const object = {
 const xml = objectToXml(object); // <item><foo>Lorem</foo><bar>Ipsum</bar></item>
 ```
 
-## Optional Configuration to ignore null values
+## Optional configuration to suppress empty tags
 ```js
 import { objectToXml } from "js-object-to-xml";
 
